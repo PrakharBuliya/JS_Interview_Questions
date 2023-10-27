@@ -1,16 +1,16 @@
-/* Lexical Scoping 
+//  Lexical Scoping
 
-function init() {
-  let name = "Mozilla";
+// function init() {
+//   let name = "Mozilla";
 
-  function displayName() {
-    console.log(name);
-  }
+//   function displayName() {
+//     console.log(name);
+//   }
 
-  displayName();
-}
+//   displayName();
+// }
 
-init();
+// init();
 
 function outer() {
   let name = "Prakhar";
@@ -20,7 +20,7 @@ function outer() {
   }
   inner();
 }
-outer()*/
+outer();
 
 //Closures = you return a function where lexical scope is also returned
 
@@ -39,3 +39,17 @@ outer()*/
 // myFunc();
 
 //Example
+
+function outer() {
+  var message = "Hello, ";
+
+  function inner(name) {
+    console.log(message + name);
+  }
+
+  return inner;
+}
+
+var greet = outer();
+greet("Alice");
+greet("Bob");
